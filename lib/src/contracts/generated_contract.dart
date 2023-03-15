@@ -20,11 +20,13 @@ abstract class GeneratedContract {
   }
 
   Future<List<dynamic>> read(
+    EthereumAddress? sender,
     ContractFunction function,
     List<dynamic> params,
     BlockNum? atBlock,
   ) {
     return client.call(
+      sender: sender,
       contract: self,
       function: function,
       params: params,
